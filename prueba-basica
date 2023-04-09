@@ -1,0 +1,30 @@
+// ARRAY CON LOS DATOS DE LOS EMPLEADOS
+var empleados = [
+    {nombre: "santiago alcaraz", tiempo: 10, cargo: "CEO", cumpleanios: "febrero"},
+    {nombre: "andrea jimenez", tiempo: 4, cargo: "contadora", cumpleanios: "abril"},
+    {nombre: "simon calle", tiempo: 8, cargo: "asesor", cumpleanios: "marzo"},
+    {nombre: "jorge gomez", tiempo: 20, cargo: "asesor", cumpleanios: "febrero"},
+    {nombre: "andres gaviria", tiempo: 9, cargo: "asesor", cumpleanios: "febrero"},
+    {nombre: "marcela restrepo", tiempo: 2, cargo: "aseo", cumpleanios: "enero"},
+];
+
+// PUSH PARA AGREGAR UN NUEVO OBJETO
+empleados.push({nombre: "Julian Cadavid",tiempo: 1,cargo: "asesor", cumpleanios: "abril"});
+
+// CONSULTA DE CANTIDAD DE ASORES EN LA EMPRESA
+var asesores = empleados.filter(function(empleado){
+    return empleado.cargo == "asesor";
+});
+// console.log("En la empresa hay: "+asesores.length+" asesores");
+
+// CONSULTA CUMPLEANIOS DE FEBRERO
+var cumpleanieros = asesores.filter(function(cumpleaniero){
+    return cumpleaniero.cumpleanios == "febrero";
+});
+// console.log("En el mes de febrero cumplen: "+cumpleanieros.length+" asesores");
+
+// MENSAJE DE LA CONSOLA
+for(var i = 0; i < cumpleanieros.length; i++){
+    var regalo = cumpleanieros[i].tiempo > 10 ? 2000 : 1000;
+    console.log("El asesor "+cumpleanieros[i].nombre+" recibirá un regalo de: $"+regalo);
+}
